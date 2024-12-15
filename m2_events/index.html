@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Browser Events</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- Widget 1
+  Clicking on the button should increment the count!
+  -->
+  <section>
+    <p>Click counter</p>
+    <button id="counterBtn">Click Me!</button>
+    <p id="countDisplay">0</p>
+  </section>
+  <!-- EVENT 2
+  Clicking on the button should toggle the text on and off!
+  -->
+  <section>
+    <p>Toggle widget</p>
+    <button id="toggleBtn">Toggle</button>
+    <div id="toggleContent" style="display: none;">ON</div>
+  </section>
+  <!-- Widget 3
+  Clicking on the link should make an alert dialog pop up!
+  -->
+  <section>
+    <p>Widget 3</p>
+    <div id="widget3">
+      <a href="https://www.pexels.com/search/dog/" id="alertLink">Show me dogs</a>
+      <a href="https://bloomtech.com" id="bloomtech">Bloomtech</a>
+    </div>
+  </section>
+  <!-- Widget 4
+  Clicking on submit should disable the submit button!
+  -->
+  <section>
+    <p>Widget 4</p>
+    <form id="myForm">
+      <input type="text" name="inputField" required>
+      <button type="submit" id="submitButton">Submit</button>
+    </form>
+  </section>
+  <!-- Widget 5
+  Addition and subtraction should work correctly!
+  -->
+  <section>
+    <p>Widget 5</p>
+    <input type="text" id="num1">
+    <input type="text" id="num2">
+    <button id="addBtn">Add</button>
+    <button id="subtractBtn">Subtract</button>
+    <p id="result">Result: </p>
+  </section>
+
+  <section>
+    <button style="background-color:rgb(32, 143, 181)" id="btn1">Btn1</button>
+    <button style="background-color:rgb(174, 174, 79)" id="btn2">Btn2</button>
+    <button style="background-color:rgb(194, 135, 135)" id="btn3">Btn3</button><br /><br />
+    <input id="input1" /> Enter text
+  </section>
+
+  <section id="C">
+    <div id="B">
+      Stop Propagation in its tracks...
+      <button id="A1">at the Button</button>
+      <button id="A2">at the Div</button>
+      <button id="A3">at the Section</button>
+      <button id="toggleButton">Toggle Code Block</button>
+    </div>
+  </section>
+
+  <section>
+
+  </section>
+
+</body>
+<script src="script.js"></script>
+
+</html>

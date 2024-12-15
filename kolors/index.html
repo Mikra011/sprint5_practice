@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sunray Effect on Hover</title>
+<style>
+  body {
+    background: #2EB5E5;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .hover-element {
+    width: 200px;
+    height: 100px;
+    background: #fff;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .sunray-effect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .sun {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: white;
+    opacity: 0.9;
+    box-shadow: 0px 0px 40px 15px white;
+  }
+  
+  .ray_box {
+    position: absolute;
+    width: 70px;
+    animation: ray_anim 120s linear infinite;
+  }
+  
+  .ray {
+    background: linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,0.8) 50%, rgba(255,255,255,0) 100%);
+    margin-left: 10px;
+    border-radius: 80% 80% 0 0;
+    position: absolute;
+    opacity: 0.1;
+  }
+  
+  .ray1 { height: 170px; width: 30px; transform: rotate(180deg); top: -175px; left: 15px; }
+  .ray2 { height: 100px; width: 8px; transform: rotate(220deg); top: -90px; left: 75px; }
+  .ray3 { height: 170px; width: 50px; transform: rotate(250deg); top: -80px; left: 100px; }
+  .ray4 { height: 120px; width: 14px; transform: rotate(305deg); top: 30px; left: 100px; }
+  .ray5 { height: 140px; width: 30px; transform: rotate(-15deg); top: 60px; left: 40px; }
+  .ray6 { height: 90px; width: 50px; transform: rotate(30deg); top: 60px; left: -40px; }
+  .ray7 { height: 180px; width: 10px; transform: rotate(70deg); top: -35px; left: -40px; }
+  .ray8 { height: 120px; width: 30px; transform: rotate(100deg); top: -45px; left: -90px; }
+  .ray9 { height: 80px; width: 10px; transform: rotate(120deg); top: -65px; left: -60px; }
+  .ray10 { height: 190px; width: 23px; transform: rotate(150deg); top: -185px; left: -60px; }
+
+  @keyframes ray_anim {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+</style>
+</head>
+<body>
+
+<div class="hover-element">Hover me</div>
+<div class="sunray-effect">
+  <div class="sun"></div>
+  <div class="ray_box">
+    <div class="ray ray1"></div>
+    <div class="ray ray2"></div>
+    <div class="ray ray3"></div>
+    <div class="ray ray4"></div>
+    <div class="ray ray5"></div>
+    <div class="ray ray6"></div>
+    <div class="ray ray7"></div>
+    <div class="ray ray8"></div>
+    <div class="ray ray9"></div>
+    <div class="ray ray10"></div>
+  </div>
+</div>
+
+<script>
+  document.querySelector('.hover-element').addEventListener('mouseover', function(e) {
+    const sunrayEffect = document.querySelector('.sunray-effect');
+    sunrayEffect.style.opacity = '1';
+  });
+
+  document.querySelector('.hover-element').addEventListener('mousemove', function(e) {
+    const sunrayEffect = document.querySelector('.sunray-effect');
+    const rect = e.target.getBoundingClientRect();
+    const offsetX = e.clientX - rect.left;
+    const offsetY = e.clientY - rect.top;
+    
+    sunrayEffect.style.left = `${offsetX}px`;
+    sunrayEffect.style.top = `${offsetY}px`;
+  });
+
+  document.querySelector('.hover-element').addEventListener('mouseout', function() {
+    const sunrayEffect = document.querySelector('.sunray-effect');
+    sunrayEffect.style.opacity = '0';
+  });
+</script>
+
+</body>
+</html>

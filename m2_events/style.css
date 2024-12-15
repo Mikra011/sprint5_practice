@@ -1,0 +1,22 @@
+#widget3 {
+    display: flex;
+    flex-direction: row;
+}
+
+#widget3 a {
+    margin: 20px;
+}
+
+body {
+    background-color: rgb(206, 220, 214);
+}
+
+#B {
+    display: flex;
+    flex-direction: row;
+    margin: 20px;
+}
+
+#B button {
+    margin: 20px;
+}

@@ -1,0 +1,59 @@
+#spinner {
+    max-width: 100px;
+    align-self: center;
+}
+
+#spinner img {
+    max-width: 100px;
+    animation: spin 4s linear infinite;
+}
+
+#data {
+    align-self: center;
+    font-weight: bold;
+}
+
+#error {
+    color: red;
+    font-weight: bold;
+    align-self: center;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+section {
+    border: solid black 2px;
+    border-radius: 20px;
+    margin: 20px;
+    padding: 10px;
+    text-align: center;
+}
+
+#planets {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#planets div {
+    border: 1px solid black;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    width: 300px;
+}
+
+#planets div p {
+    line-height: 0.8rem;
+}
